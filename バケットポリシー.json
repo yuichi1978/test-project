@@ -1,0 +1,28 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::Bucket-Name/*"
+            ]
+        }
+    ]
+}
+
+// ----
+
+// 各要素の意味：
+
+// Version: ポリシー言語のバージョン
+// Statement: 1つ以上のルールの集まり
+// Sid: ルールの識別子（任意）
+// Effect: アクションを許可（Allow）するか拒否（Deny）するか
+// Principal: このルールが適用されるユーザー/サービス（"*"は誰でも）
+// Action: 許可/拒否する操作（例: s3 = 読み取り操作）
+// Resource: ルールが適用されるリソース
