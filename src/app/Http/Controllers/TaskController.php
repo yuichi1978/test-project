@@ -34,13 +34,12 @@ class TaskController extends Controller
         //
         $validated = $request->validate([
             'title' => 'required|max:255',
-            'description' => 'nullable',
         ]);
 
         Task::create($validated);
 
         return redirect()->route('tasks.index')
-        ->with('success', 'タスクが作成されました。');
+            ->with('success', 'タスクが作成されました。');
     }
 
     /**
@@ -76,7 +75,7 @@ class TaskController extends Controller
         $task->update($validated);
 
         return redirect()->route('tasks.index')
-        ->with('success', 'タスクが更新されました。');
+            ->with('success', 'タスクが更新されました。');
     }
 
     /**
@@ -88,6 +87,6 @@ class TaskController extends Controller
         $task->delete();
 
         return redirect()->route('tasks.index')
-        ->with('success', 'タスクが削除されました。');
+            ->with('success', 'タスクが削除されました。');
     }
 }
